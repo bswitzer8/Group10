@@ -1,0 +1,54 @@
+/* Below makes the filter buttons look like buttons instead of checkboxes  */
+div label input {
+	margin-right:100px;
+}
+body {
+	font-family:sans-serif;
+}
+
+#ck-button {
+	margin:4px;
+	background-color:#EFEFEF;
+	border-radius:4px;
+	border:1px solid #D0D0D0;
+	overflow:auto;
+	float:left;
+}
+
+#ck-button label {
+	float:left;
+	width:4.0em;
+
+}
+
+#ck-button label span {
+	text-align:center;
+	padding:3px 0px;
+	display:block;
+}
+
+#ck-button label input {
+	position:absolute;
+	top:-20px;
+}
+
+#ck-button input:checked + span {
+	background-color:#911;
+	color:#fff;
+}
+
+/* Below makes the logout button hover in the top right corner  */
+.top-right-corner{
+	position:absolute;
+	top:30px;
+	right:30px;
+}
+
+/* Below is for the box that the todo list items are in */
+div.transbox {
+	margin: 30px;
+	background-color: #ffffff;
+	border: 1px solid black;
+	opacity: 0.6;
+	filter: alpha(opacity=60); /* For IE8 and earlier */
+}
