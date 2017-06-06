@@ -1,7 +1,8 @@
 
-CREATE DATABASE IF NOT EXISTS listastic;
- 
-USE listastic;
+CREATE DATABASE IF NOT EXISTS group10;
+
+-- the database name is group10 
+USE group10;
 
 CREATE TABLE IF NOT EXISTS `users` (
 	`id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -21,7 +22,7 @@ CREATE TABLE IF NOT EXISTS `lists` (
   `description` TEXT DEFAULT NULL,
   PRIMARY KEY (`id`),
   INDEX `UserID`(`user_id` ASC),
-  CONSTRAINT `user_id` FOREIGN KEY(`user_id`) REFERENCES `listastic`.`users`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE 
+  CONSTRAINT `user_id` FOREIGN KEY(`user_id`) REFERENCES `group10`.`users`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE 
 );
 
 CREATE TABLE IF NOT EXISTS `sharedlists` (
@@ -31,8 +32,8 @@ CREATE TABLE IF NOT EXISTS `sharedlists` (
 	PRIMARY KEY (`id`),
   	INDEX `UserID`(`user_id` ASC),
   	INDEX `ListID` (`list_id` ASC),
-  	FOREIGN KEY(`user_id`) REFERENCES `listastic`.`users`(`id`) ON UPDATE CASCADE, 
-  	FOREIGN KEY(`list_id`) REFERENCES `listastic`.`lists`(`id`) ON UPDATE CASCADE
+  	FOREIGN KEY(`user_id`) REFERENCES `group10`.`users`(`id`) ON UPDATE CASCADE, 
+  	FOREIGN KEY(`list_id`) REFERENCES `group10`.`lists`(`id`) ON UPDATE CASCADE
 );
 
 
