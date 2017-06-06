@@ -12,6 +12,16 @@ CREATE TABLE IF NOT EXISTS `users` (
 	PRIMARY KEY (`id`)
 );
 
+CREATE TABLE IF NOT EXISTS `sharedlists` (
+	`id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+	`user_id` INT UNSIGNED NOT NULL,
+	`list_id` INT UNSIGNED NOT NULL,
+	PRIMARY KEY (`id`),
+  	INDEX `UserID`(`user_id` ASC),
+  	INDEX `ListID` (`list_id` ASC),
+  	CONSTRAINT `user_id` FOREIGN KEY(`user_id`) REFERENCES `listastic`.`users`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE, 
+  	CONSTRAINT `list_id` FOREIGN KEY(`list_id`) REFERENCES `listastic`.`lists`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE 
+);
 
 CREATE TABLE IF NOT EXISTS `lists` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,

@@ -1,13 +1,16 @@
-app.controller("mainController", function($scope){
+app.controller("mainController", function($scope, $http){
  
-    // read products
-    $scope.test = function(){
- 
-        $scope.blah = "angular stuff";
- 
-    };
+	// we would get the user like the data
+	$scope.user = { name: "bob"};
+		// this needs to be changed to get from a php source
+		$http.get('app/content/json/dumby_data.json')
+   		.then(function(res){
+      		$scope.raw = res.data;  
+      		$scope.todo = angular.copy($scope.raw);
+    });
 
-    $scope.test();
-     
+   	$scope.tags = ["school", "fitness", "work"];         
+		
+
 
 });
