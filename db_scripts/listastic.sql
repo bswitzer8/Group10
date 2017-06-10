@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 	PRIMARY KEY (`id`)
 );
 
-CREATE TABLE IF NOT EXISTS `lists` (
+CREATE TABLE IF NOT EXISTS `listitems` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `user_id` INT UNSIGNED NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -17,6 +17,7 @@ CREATE TABLE IF NOT EXISTS `lists` (
   `description` TEXT DEFAULT NULL,
   `due_date` TIMESTAMP NULL DEFAULT NULL,
   `location` varchar(255) DEFAULT NULL,
+  `priority` INT UNSIGNED DEFAULT NULL,
   PRIMARY KEY (`id`),
   INDEX `UserID`(`user_id` ASC),
   CONSTRAINT `user_id` FOREIGN KEY(`user_id`) REFERENCES `group10`.`users`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE 
@@ -29,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `sharedlistitems` (
   	INDEX `UserID`(`user_id` ASC),
   	INDEX `ListID` (`list_id` ASC),
   	CONSTRAINT `user_id1` FOREIGN KEY(`user_id`) REFERENCES `group10`.`users`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE, 
-  	CONSTRAINT `list_id1` FOREIGN KEY(`list_id`) REFERENCES `group10`.`lists`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE 
+  	CONSTRAINT `list_id1` FOREIGN KEY(`list_id`) REFERENCES `group10`.`listitems`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE 
 );
 
 CREATE TABLE IF NOT EXISTS `filters` (
@@ -38,5 +39,5 @@ CREATE TABLE IF NOT EXISTS `filters` (
   PRIMARY KEY (`list_id`, `filter`),
     INDEX `ListId`(`list_id` ASC),
     INDEX `Filter`(`filter` ASC),
-    CONSTRAINT `list_id` FOREIGN KEY(`list_id`) REFERENCES `group10`.`lists`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE 
+    CONSTRAINT `list_id` FOREIGN KEY(`list_id`) REFERENCES `group10`.`listitems`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE 
 );
