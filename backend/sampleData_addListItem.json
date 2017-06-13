@@ -4,5 +4,5 @@
 	"createdDate": "2017-07-10T12:53:26.123Z",
 	"dueDate": "2017-07-17T22:30:00.000Z",
 	"location": "123 Main St.",
-	"priority": 5
+	"priority": "5"
 }

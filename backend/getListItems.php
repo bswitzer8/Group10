@@ -19,7 +19,7 @@ while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
     $outp .= '"description":"'  . $rs["description"]. '",';
     $outp .= '"location":"'		. $rs["location"]	. '",';
     $outp .= '"dueDate":"'		. $rs["due_date"]	. '",';
-    $outp .= '"createdDate":"'  . $rs["createdDate"]. '",';
+    $outp .= '"createdDate":"'  . $rs["created"]. '",';
     $outp .= '"priority":"'		. $rs["priority"]	. '"}';
 }
 $outp ='{"records":['.$outp.']}';

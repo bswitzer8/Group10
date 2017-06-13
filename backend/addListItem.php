@@ -11,8 +11,8 @@
 	} 
 
 	// prepare and bind
-	$stmt = $conn->prepare("INSERT INTO listitems (user_id, name, created, description, due_date, location) VALUES (?, ?, ?, ?, ?, ?)");
-	$stmt->bind_param("ssssss", $user_id, $name, $created, $description, $dueDate, $location);
+	$stmt = $conn->prepare("INSERT INTO listitems (user_id, name, created, description, due_date, location, priority) VALUES (?, ?, ?, ?, ?, ?, ?)");
+	$stmt->bind_param("sssssss", $user_id, $name, $created, $description, $dueDate, $location, $priority);
 
 	//TODO: Point this to wherever the actual data is coming from. This is test data. 
 	$jsonData = file_get_contents('sampleData_addListItem.json');
@@ -21,7 +21,6 @@
 
 	//TODO: Delete this - hardcoding for testing until PHP sessions are set up.
 	$_SESSION["user_id"] = 1;
-
 
 	$user_id = $_SESSION["user_id"];
 	$name = $data["name"];
