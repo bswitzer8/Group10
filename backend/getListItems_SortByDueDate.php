@@ -15,7 +15,7 @@ $_SESSION["user_id"] = 1;
 
 $user_id = $_SESSION["user_id"];
 
-$result = $conn->query("SELECT * FROM listitems WHERE user_id = ".$user_id);
+$result = $conn->query("SELECT * FROM listitems WHERE user_id = ".$user_id." ORDER BY due_date ASC");
 
 $outp = "";
 while($rs = $result->fetch_array(MYSQLI_ASSOC)) {

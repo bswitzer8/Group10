@@ -40,6 +40,19 @@
 					</select>
 				</div>
 
+				<br><br>
+				
+				<div id="add_new">
+					<button ng-click="showTheForm = !showTheForm">Add a Task</button>
+					<br><br>
+					<form ng-show="showTheForm" ng-submit="addListItem()>
+						<label>Name: <input type="text"/></label><br/>
+						<label>Description: <input type="text"/></label><br/>			       
+						<button type="button" ng-click="showTheForm = false">Cancel</button>
+						<button>Submit</button>
+					</form>
+				</div>
+				
 				<br><hr>
 
 				<div id="list">
