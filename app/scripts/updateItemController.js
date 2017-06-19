@@ -2,10 +2,15 @@
 	/* global angular */
 	var app = angular.module("Listastic"); 
 	
-	app.controller("addItemController", function($scope, $location, $routeParams, $http){
+	app.controller("updateItemController", function($scope, $location, $routeParams, $http){
 	 
-	 
-		if($routeParams.id)
+		console.log($routeParams.id);
+		
+		$scope.cancel = function(){
+			  $location.path("main");
+		}
+		
+		if($routeParams.id != null && $routeParams.id != undefined)
 		{
 			function handleError(data)
 			{
@@ -14,13 +19,20 @@
 				// redirect?
 			}
 			
+			function handleSuccess(data){ 
+				console.log(data.data.records)
+				$scope.list = data.data.records[0];
+			}
+			
+			console.log("get?");
+			
 			 var request = $http({
 	            method: "post",
 	            url: "backend/getListItem.php",
 	            data: { id: $routeParams.id },
 	            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
 	        });
-        	return( request.then( function(data){ $scope.list = data; }, handleError ) );
+        	return( request.then( handleSuccess, handleError ) );
 		
 			
 		}

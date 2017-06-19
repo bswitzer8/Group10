@@ -4,18 +4,20 @@ session_start();
 header("Access-Control-Allow-Origin: *");
 //header("Content-Type: application/json; charset=UTF-8");
 
-$conn = new mysqli("localhost", "group10", "droptables", "group10");
+	require('./config.php');
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
+
+$postdata = file_get_contents("php://input");
+$t = json_decode($postdata);
+$id = $t->id;
+
 
 //TODO: Delete this - hardcoding for testing until PHP sessions are set up.
 $_SESSION["user_id"] = 1;
 
-$user_id = $_SESSION["user_id"];
 
-$result = $conn->query("SELECT * FROM listitems WHERE id = ".$user_id);
+
+$result = $conn->query("SELECT * FROM listitems WHERE id = ".$id);
 
 $outp = "";
 while($rs = $result->fetch_array(MYSQLI_ASSOC)) {

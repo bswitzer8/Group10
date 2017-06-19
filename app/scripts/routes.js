@@ -34,7 +34,7 @@
 			templateUrl: "app/views/add.html",
 			controller: "addItemController"
 		})
-		.when("/update:id", {
+		.when("/update/:id", {
 			title: "Listastic - Update Item!",
 			templateUrl: "app/views/update.html",
 			controller: "updateItemController"
