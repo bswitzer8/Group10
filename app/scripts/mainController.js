@@ -8,10 +8,11 @@
 		// we would get the user like the data
 		$scope.user = { name: "bob"};
 			// this needs to be changed to get from a php source
-			$http.get('app/content/json/dumby_data.json')
+			$http.get('backend/getListItems.php')
 			.then(function(res){
-				$scope.raw = res.data;  
-				$scope.todo = angular.copy($scope.raw);
+				console.log(res);
+				
+			 //	$scope.todo = angular.copy($scope.raw);
 		});
 
 		$scope.tags = ["school", "fitness", "work"];         

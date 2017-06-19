@@ -1,13 +1,122 @@
-
-		<div class="container" ng-app="Listastic">
-			<div ng-controller="addController">
-				<h1 id="heading" align="center"></h1> 
-				<div class="top-right-corner button" ng-show="user != null">
-					<button type="button" style="font-size: 16px; border-radius:4px;">Logout</button>
-				</div>
+<style type="text/css">
+	p, label { color: white; }
+	
+	.content {
+		margin: 			auto;
+		width: 				80%;
+	
+		padding: 			10px;
+	}
+				
+	.row {
+		padding-bottom: 10px;
+	}
+	
+	.row label {
+		font-weight:bold;
+		padding-right: 40px;	
+	}
+	
+	
+	.column-fourth {
+		width: 25%;
+		display: inline;
+		float:left;
+		padding-bottom: 5px;
+	
+	}
+	
+	.column-third {
+		width: 33%;
+		float:left;
+		display: inline;
+		padding-bottom: 5px;
+	}
+	
+	.column-half {
+		width: 50%;
+		float:left;
+		display: inline;
+		padding-bottom: 5px;
+	}
+	
+	.column-threefourth {
+		width: 75%;
+		float:left;
+		display: inline;
+		padding-bottom: 5px;
+	}
+	.column-whole {
+		width: 100%;
+		float: left;
+		display: inline;
+		padding-bottom: 5px;
+	}
+</style>
+		
+		
+<div class="content">
+		<div class="top-right-corner button" ng-show="user != null">
+			<button type="button" style="font-size: 16px; border-radius:4px;">Logout</button>
+			<a ng-href="#!add">Add Item</a>
+		</div>
 
 	
-				https://www.w3schools.com/angular/angular_routing.asp
-
-			</div>
+		<div class="content">
+			<div class="row">
+				<label class="column-fourth">Name</label>
+				<input type = "text" 
+					   name = "name" ng-model="list.name" placeholder = "Task Name" 
+					   required/>
 		</div>
+	   
+		 <div class="row">
+			<label class="column-fourth">Priority</label>
+			<select  ng-model="list.priority">
+				<option ng-repeat="priority in priorities" ng-value="priority.numeric">{{ priority.name }}</option>		
+			</select>
+		</div>
+		
+		 <div class="row">
+			<label class="column-fourth">Due date</label>
+			<input type = "date" 
+				   name = "date" ng-model="list.due_date" 
+				   />
+		</div>
+	
+		<div class="row">
+			<label class="column-fourth">Location</label>
+			<input type = "text" 
+				   name = "location" ng-model="list.location" placeholder = "Location? i.e.: Grocery Store, Gym" 
+				   />
+		</div>
+	  
+			  
+
+		<div class="row">
+			<label class="column-fourth">Description</label>
+			
+			<textarea style="width:300px; height:200px"   
+				      name = "description" 
+					  ng-model="list.description">
+			</textarea>
+		</div>
+		
+
+		<hr>
+		<div class="row">
+			<button class="" 
+					type = "button" 
+					ng-click="go()"
+					name = "Save"> Save
+			</button>
+			<button class="" 
+				type = "button"
+				name = "cancel"
+				ng-click="cancel()">
+				Cancel
+			</button>
+	
+	   </div>
+	</div>
+</div>

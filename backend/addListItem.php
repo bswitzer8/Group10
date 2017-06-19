@@ -2,7 +2,7 @@
 	session_start();
 
 	header("Access-Control-Allow-Origin: *");
-	header("Content-Type: application/json; charset=UTF-8");
+	//header("Content-Type: application/json; charset=UTF-8");
 
 	$conn = new mysqli("localhost", "group10", "droptables", "group10");
 
@@ -17,6 +17,8 @@
 	//TODO: Point this to wherever the actual data is coming from. This is test data. 
 	$jsonData = file_get_contents('sampleData_addListItem.json');
 	$data = json_decode($jsonData, true);
+	
+	$data = $data["data"];
 	print_r($data);
 
 	//TODO: Delete this - hardcoding for testing until PHP sessions are set up.
