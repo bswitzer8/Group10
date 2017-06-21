@@ -2,13 +2,9 @@
 session_start();
 
 header("Access-Control-Allow-Origin: *");
-header("Content-Type: application/json; charset=UTF-8");
+//header("Content-Type: application/json; charset=UTF-8");
 
-$conn = new mysqli("localhost", "group10", "droptables", "group10");
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
+require('./config.php');
 
 //TODO: Delete this - hardcoding for testing until PHP sessions are set up.
 $_SESSION["user_id"] = 1;
@@ -22,6 +18,7 @@ while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
     if ($outp != "") {$outp .= ",";}
     $outp .= '{"name":"'  		. $rs["name"] 		. '",';
     $outp .= '"description":"'  . $rs["description"]. '",';
+    $outp .= '"id":"'           . $rs["id"].          '",';
     $outp .= '"location":"'		. $rs["location"]	. '",';
     $outp .= '"dueDate":"'		. $rs["due_date"]	. '",';
     $outp .= '"createdDate":"'  . $rs["created"]. '",';

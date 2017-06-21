@@ -4,11 +4,7 @@ session_start();
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
-$conn = new mysqli("localhost", "group10", "droptables", "group10");
-
-if ($conn->connect_error) {
-	die("Connection failed: " . $conn->connect_error);
-} 
+require('./config.php');
 
 	// prepare and bind
 $stmt = $conn->prepare("INSERT INTO filters (list_id, filter) VALUES (?, ?)");

@@ -1,0 +1,76 @@
+[15-Jun-2017 04:19:09 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'group10'@'localhost' (using password: YES) in /home/ubuntu/workspace/Group10/backend/getListItems.php on line 7
+[15-Jun-2017 04:19:09 UTC] PHP Stack trace:
+[15-Jun-2017 04:19:09 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/getListItems.php:0
+[15-Jun-2017 04:19:09 UTC] PHP   2. mysqli->mysqli() /home/ubuntu/workspace/Group10/backend/getListItems.php:7
+[15-Jun-2017 04:19:41 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'group10'@'localhost' (using password: YES) in /home/ubuntu/workspace/Group10/backend/getListItems.php on line 7
+[15-Jun-2017 04:19:41 UTC] PHP Stack trace:
+[15-Jun-2017 04:19:41 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/getListItems.php:0
+[15-Jun-2017 04:19:41 UTC] PHP   2. mysqli->mysqli() /home/ubuntu/workspace/Group10/backend/getListItems.php:7
+[15-Jun-2017 04:22:43 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'group10'@'localhost' (using password: YES) in /home/ubuntu/workspace/Group10/backend/getListItems.php on line 7
+[15-Jun-2017 04:22:43 UTC] PHP Stack trace:
+[15-Jun-2017 04:22:43 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/getListItems.php:0
+[15-Jun-2017 04:22:43 UTC] PHP   2. mysqli->mysqli() /home/ubuntu/workspace/Group10/backend/getListItems.php:7
+[15-Jun-2017 04:23:19 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'group10'@'localhost' (using password: YES) in /home/ubuntu/workspace/Group10/backend/getListItems.php on line 7
+[15-Jun-2017 04:23:19 UTC] PHP Stack trace:
+[15-Jun-2017 04:23:19 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/getListItems.php:0
+[15-Jun-2017 04:23:19 UTC] PHP   2. mysqli->mysqli() /home/ubuntu/workspace/Group10/backend/getListItems.php:7
+[15-Jun-2017 04:23:40 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'group10'@'localhost' (using password: YES) in /home/ubuntu/workspace/Group10/backend/getListItems.php on line 7
+[15-Jun-2017 04:23:40 UTC] PHP Stack trace:
+[15-Jun-2017 04:23:40 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/getListItems.php:0
+[15-Jun-2017 04:23:40 UTC] PHP   2. mysqli->mysqli() /home/ubuntu/workspace/Group10/backend/getListItems.php:7
+[15-Jun-2017 04:24:24 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'group10'@'localhost' (using password: YES) in /home/ubuntu/workspace/Group10/backend/getListItems.php on line 7
+[15-Jun-2017 04:24:24 UTC] PHP Stack trace:
+[15-Jun-2017 04:24:24 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/getListItems.php:0
+[15-Jun-2017 04:24:24 UTC] PHP   2. mysqli->mysqli() /home/ubuntu/workspace/Group10/backend/getListItems.php:7
+[15-Jun-2017 04:24:49 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'group10'@'localhost' (using password: YES) in /home/ubuntu/workspace/Group10/backend/getListItems.php on line 7
+[15-Jun-2017 04:24:49 UTC] PHP Stack trace:
+[15-Jun-2017 04:24:49 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/getListItems.php:0
+[15-Jun-2017 04:24:49 UTC] PHP   2. mysqli->mysqli() /home/ubuntu/workspace/Group10/backend/getListItems.php:7
+[15-Jun-2017 04:25:27 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'group10'@'localhost' (using password: YES) in /home/ubuntu/workspace/Group10/backend/getListItems.php on line 7
+[15-Jun-2017 04:25:27 UTC] PHP Stack trace:
+[15-Jun-2017 04:25:27 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/getListItems.php:0
+[15-Jun-2017 04:25:27 UTC] PHP   2. mysqli->mysqli() /home/ubuntu/workspace/Group10/backend/getListItems.php:7
+[15-Jun-2017 04:25:59 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'group10'@'localhost' (using password: YES) in /home/ubuntu/workspace/Group10/backend/getListItems.php on line 7
+[15-Jun-2017 04:25:59 UTC] PHP Stack trace:
+[15-Jun-2017 04:25:59 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/getListItems.php:0
+[15-Jun-2017 04:25:59 UTC] PHP   2. mysqli->mysqli() /home/ubuntu/workspace/Group10/backend/getListItems.php:7
+[15-Jun-2017 04:26:11 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'group10'@'localhost' (using password: YES) in /home/ubuntu/workspace/Group10/backend/getListItems.php on line 7
+[15-Jun-2017 04:26:11 UTC] PHP Stack trace:
+[15-Jun-2017 04:26:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/getListItems.php:0
+[15-Jun-2017 04:26:11 UTC] PHP   2. mysqli->mysqli() /home/ubuntu/workspace/Group10/backend/getListItems.php:7
+[15-Jun-2017 04:26:39 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'group10'@'localhost' (using password: YES) in /home/ubuntu/workspace/Group10/backend/getListItems.php on line 7
+[15-Jun-2017 04:26:39 UTC] PHP Stack trace:
+[15-Jun-2017 04:26:39 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/getListItems.php:0
+[15-Jun-2017 04:26:39 UTC] PHP   2. mysqli->mysqli() /home/ubuntu/workspace/Group10/backend/getListItems.php:7
+[15-Jun-2017 04:27:17 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'group10'@'localhost' (using password: YES) in /home/ubuntu/workspace/Group10/backend/getListItems.php on line 7
+[15-Jun-2017 04:27:17 UTC] PHP Stack trace:
+[15-Jun-2017 04:27:17 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/getListItems.php:0
+[15-Jun-2017 04:27:17 UTC] PHP   2. mysqli->mysqli() /home/ubuntu/workspace/Group10/backend/getListItems.php:7
+[15-Jun-2017 04:27:49 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'group10'@'localhost' (using password: YES) in /home/ubuntu/workspace/Group10/backend/getListItems.php on line 7
+[15-Jun-2017 04:27:49 UTC] PHP Stack trace:
+[15-Jun-2017 04:27:49 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/getListItems.php:0
+[15-Jun-2017 04:27:49 UTC] PHP   2. mysqli->mysqli() /home/ubuntu/workspace/Group10/backend/getListItems.php:7
+[15-Jun-2017 04:29:54 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'group10'@'localhost' (using password: YES) in /home/ubuntu/workspace/Group10/backend/getListItems.php on line 7
+[15-Jun-2017 04:29:54 UTC] PHP Stack trace:
+[15-Jun-2017 04:29:54 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/getListItems.php:0
+[15-Jun-2017 04:29:54 UTC] PHP   2. mysqli->mysqli() /home/ubuntu/workspace/Group10/backend/getListItems.php:7
+[19-Jun-2017 18:24:49 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'group10'@'localhost' (using password: YES) in /home/ubuntu/workspace/Group10/backend/getListItems.php on line 7
+[19-Jun-2017 18:24:49 UTC] PHP Stack trace:
+[19-Jun-2017 18:24:49 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/getListItems.php:0
+[19-Jun-2017 18:24:49 UTC] PHP   2. mysqli->mysqli() /home/ubuntu/workspace/Group10/backend/getListItems.php:7
+[19-Jun-2017 18:27:36 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'group10'@'localhost' (using password: YES) in /home/ubuntu/workspace/Group10/backend/getListItems.php on line 7
+[19-Jun-2017 18:27:36 UTC] PHP Stack trace:
+[19-Jun-2017 18:27:36 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/getListItems.php:0
+[19-Jun-2017 18:27:36 UTC] PHP   2. mysqli->mysqli() /home/ubuntu/workspace/Group10/backend/getListItems.php:7
+[19-Jun-2017 19:03:47 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'group10'@'localhost' (using password: YES) in /home/ubuntu/workspace/Group10/backend/addListItem.php on line 7
+[19-Jun-2017 19:03:47 UTC] PHP Stack trace:
+[19-Jun-2017 19:03:47 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/addListItem.php:0
+[19-Jun-2017 19:03:47 UTC] PHP   2. mysqli->mysqli() /home/ubuntu/workspace/Group10/backend/addListItem.php:7
+[19-Jun-2017 19:04:46 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'group10'@'localhost' (using password: YES) in /home/ubuntu/workspace/Group10/backend/addListItem.php on line 7
+[19-Jun-2017 19:04:46 UTC] PHP Stack trace:
+[19-Jun-2017 19:04:46 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/addListItem.php:0
+[19-Jun-2017 19:04:46 UTC] PHP   2. mysqli->mysqli() /home/ubuntu/workspace/Group10/backend/addListItem.php:7
+[19-Jun-2017 19:04:47 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'group10'@'localhost' (using password: YES) in /home/ubuntu/workspace/Group10/backend/getListItems.php on line 7
+[19-Jun-2017 19:04:47 UTC] PHP Stack trace:
+[19-Jun-2017 19:04:47 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/getListItems.php:0
+[19-Jun-2017 19:04:47 UTC] PHP   2. mysqli->mysqli() /home/ubuntu/workspace/Group10/backend/getListItems.php:7

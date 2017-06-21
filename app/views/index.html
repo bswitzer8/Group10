@@ -1,0 +1,53 @@
+<html>
+<head>
+	<link rel= "stylesheet" href="../content/css/index.css" />	
+</head>
+<h1 id="heading" align="center"></h1> 
+<div class="top-right-corner button" ng-show="user != null">
+	<button type="button" style="font-size: 16px; border-radius:4px;">Logout</button>
+	<a ng-href="#!add">Add Item</a>
+</div>
+
+
+<div id="filters"> 
+	<div id="ck-button" ng-repeat="tag in tags">
+	<label> 
+		<input type="checkbox" ng-value="tag"/><span>{{ tag }} </span> 
+	</label>
+	</div>
+</div>
+
+<br/>
+
+
+<div id="sort" ng-init="sort = 'createdDate' ">
+	Sort by: 
+	<select name="select-sort" ng-model="sort">
+		<option ng-value="'createdDate'">Most Recently Created</option>
+		<option ng-value="'-createdDate'">Least Recently Created</option>
+		<option ng-value="'priority'">Priority</option>
+		<option ng-value="'dueDate'">Due Date (newest first)</option>
+	</select>
+</div>
+
+<br/><hr/>
+
+<div id="list">
+	<div id="list-item" class="transbox" ng-repeat="item in todo | orderBy: sort">
+		<p>Name: {{ item.name }}</p>
+		<p>Description: {{ item.description }} </p>
+		<p ng-show="item.location.length > 0">Location: {{ item.location }}</p>
+		<p ng-show="item.dueDate.length > 0">Due Date: {{ item.dueDate | date:'medium' }} </p>
+		<p ng-show="item.priority.length > 0">Priority: {{ item.priority }}</p>
+		<p ng-show="item.tags.length > 0">
+			Tags: <span ng-repeat="tag in item.tags">
+				{{ tag + " "}}
+			</span> 
+		</p>
+		<p>
+			<a ng-href="#!update/{{item.id}}">Update </a>
+		</p>
+
+	</div>
+</div>
+</html>

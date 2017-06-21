@@ -2,17 +2,22 @@
 session_start();
 
 header("Access-Control-Allow-Origin: *");
-header("Content-Type: application/json; charset=UTF-8");
+//header("Content-Type: application/json; charset=UTF-8");
 
-require('./config.php');
+	require('./config.php');
 
-$jsonData = file_get_contents('sampleData_getSharedItemsByUser.json');
-$data = json_decode($jsonData, true);
 
-$userId = $data["userId"];
+$postdata = file_get_contents("php://input");
+$t = json_decode($postdata);
+$id = $t->id;
 
-$result = $conn->query("SELECT * FROM listitems INNER JOIN sharedlistitems ON listitems.user_id = sharedlistitems.user_id AND listitems.id = sharedlistitems.list_id WHERE sharedlistitems.user_id = ".$userId.";");
 
+//TODO: Delete this - hardcoding for testing until PHP sessions are set up.
+$_SESSION["user_id"] = 1;
+
+
+
+$result = $conn->query("SELECT * FROM listitems WHERE id = ".$id);
 
 $outp = "";
 while($rs = $result->fetch_array(MYSQLI_ASSOC)) {

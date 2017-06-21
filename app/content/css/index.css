@@ -1,0 +1,41 @@
+body{
+	background: #292931;
+}
+
+#index{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform:translate(-50%,-50%);
+}
+
+#index #heading{
+	text-align: center;
+	color: white;
+	font-family: sans-serif;
+	font-size: 35px;
+}
+
+.top-right-corner button{
+	background: #55acee;
+	font-size: 20px;
+	text-align: center;
+}
+
+#index h2{
+	text-align: center;
+	color: white;
+	font-family: sans-serif;
+	font-size: 35px;
+}
+
+#index h3{
+	text-align: center;
+	color: white;
+	font-family: sans-serif;
+	font-size: 25px;
+}
+
+#index p{
+	font: 200 12px/1.5 Georgia, Times New Roman, serif;
+}
