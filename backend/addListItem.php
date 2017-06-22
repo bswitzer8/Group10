@@ -11,11 +11,8 @@
 	$stmt->bind_param("sssssss", $user_id, $name, $created, $description, $dueDate, $location, $priority);
 
 	//TODO: Point this to wherever the actual data is coming from. This is test data. 
-	$jsonData = file_get_contents('sampleData_addListItem.json');
+	$jsonData = file_get_contents("php://input");
 	$data = json_decode($jsonData, true);
-	
-	$data = $data["data"];
-	print_r($data);
 
 	//TODO: Delete this - hardcoding for testing until PHP sessions are set up.
 	$_SESSION["user_id"] = 1;
@@ -24,11 +21,11 @@
 	$name = $data["name"];
 	$location = $data["location"];
 	$description = $data["description"];
-	$createdDate = date('Y-m-d H:i:s', strtotime($data["createdDate"]));  
-	$dueDate = date('Y-m-d H:i:s', strtotime($data["dueDate"]));  
+	$createdDate = date("F j, Y, g:i a");  
+	$dueDate = date('Y-m-d H:i:s', strtotime($data["due_date"]));  
 	$priority = $data["priority"];
 
-	if ($stmt->execute() === TRUE) {
+	if ( $stmt->execute() ) {
 		echo "New record created successfully";
 	} else {
 		echo "Error: " . $sql . "<br>" . $conn->error;

@@ -33,7 +33,7 @@
 <br/><hr/>
 
 <div id="list">
-	<div id="list-item" class="transbox" ng-repeat="item in todo | orderBy: sort">
+	<div id="list-item" class="transbox" ng-repeat="item in todo | orderBy: sort track by item.id">
 		<p>Name: {{ item.name }}</p>
 		<p>Description: {{ item.description }} </p>
 		<p ng-show="item.location.length > 0">Location: {{ item.location }}</p>
@@ -46,6 +46,9 @@
 		</p>
 		<p>
 			<a ng-href="#!update/{{item.id}}">Update </a>
+		</p>
+		<p> 
+			<button type="button" ng-click="delete(item.id)">Delete</button>
 		</p>
 
 	</div>

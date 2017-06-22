@@ -69,7 +69,7 @@
 					   name = "name" ng-model="list.name" placeholder = "Task Name" 
 					   required/>
 		</div>
-	   
+
 		 <div class="row">
 			<label class="column-fourth">Priority</label>
 			<select  ng-model="list.priority">
@@ -77,11 +77,15 @@
 			</select>
 		</div>
 		
-		 <div class="row">
+		<div class="row">
 			<label class="column-fourth">Due date</label>
-			<input type = "date" 
-				   name = "date" ng-model="list.due_date" 
-				   />
+			
+			<input class="form-control"
+		       ng-model="list.due_date"
+		       ng-model-options="{ updateOn: 'blur' }"
+		       placeholder="Pick a due date"
+		       moment-picker="ctrl.stringDate">
+					
 		</div>
 	
 		<div class="row">

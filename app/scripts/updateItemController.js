@@ -41,7 +41,7 @@
 			// redirect?
 		}
 		
-	    $scope.priorities = [
+	     $scope.priorities = [
 	         { numeric: 5, name: "Urgent" },
              { numeric: 4, name: "High" },
              { numeric: 3, name: "Medium" },
@@ -69,7 +69,7 @@
 		    
 		    var request = $http({
 	            method: "post",
-	            url: "backend/addListItem.php",
+	            url: "backend/updateListItem.php",
 	            data: { data: $scope.list },
 	           headers: {'Content-Type': 'application/x-www-form-urlencoded'}
 	        });

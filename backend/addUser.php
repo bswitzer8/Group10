@@ -11,7 +11,7 @@ require('./config.php');
 	$stmt->bind_param("sss", $name, $email, $password);
 
 	//TODO: Point this to wherever the actual data is coming from. This is test data. 
-	$jsonData = file_get_contents('sampleData_addUser.json');
+	$jsonData = file_get_contents("php://input");
 	$data = json_decode($jsonData, true);
 	print_r($data);
 

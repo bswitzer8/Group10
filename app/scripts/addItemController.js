@@ -8,6 +8,8 @@
 			  $location.path("main");
 		}
 		
+		// moment picker: https://embed.plnkr.co/P48UnN
+		
 	    $scope.priorities = [
 	         { numeric: 5, name: "Urgent" },
              { numeric: 4, name: "High" },
@@ -37,7 +39,7 @@
 		    var request = $http({
 	            method: "post",
 	            url: "backend/addListItem.php",
-	            data: { data: $scope.list },
+	            data: $scope.list,
 	            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
 	        });
         return( request.then( handleSuccess, handleError ) );
