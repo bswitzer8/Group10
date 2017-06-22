@@ -154,3 +154,18 @@
 [22-Jun-2017 02:48:00 UTC] PHP Fatal error:  Call to a member function close() on a non-object in /home/ubuntu/workspace/Group10/backend/deleteListItem.php on line 34
 [22-Jun-2017 02:48:00 UTC] PHP Stack trace:
 [22-Jun-2017 02:48:00 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/deleteListItem.php:0
+[22-Jun-2017 18:00:57 UTC] PHP Fatal error:  Cannot use object of type stdClass as array in /home/ubuntu/workspace/Group10/backend/updateListItem.php on line 12
+[22-Jun-2017 18:00:57 UTC] PHP Stack trace:
+[22-Jun-2017 18:00:57 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/updateListItem.php:0
+[22-Jun-2017 18:02:29 UTC] PHP Catchable fatal error:  Object of class stdClass could not be converted to string in /home/ubuntu/workspace/Group10/backend/updateListItem.php on line 13
+[22-Jun-2017 18:02:29 UTC] PHP Stack trace:
+[22-Jun-2017 18:02:29 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/updateListItem.php:0
+[22-Jun-2017 18:06:48 UTC] PHP Catchable fatal error:  Object of class stdClass could not be converted to string in /home/ubuntu/workspace/Group10/backend/updateListItem.php on line 13
+[22-Jun-2017 18:06:48 UTC] PHP Stack trace:
+[22-Jun-2017 18:06:48 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/updateListItem.php:0
+[22-Jun-2017 18:07:30 UTC] PHP Fatal error:  Cannot use object of type stdClass as array in /home/ubuntu/workspace/Group10/backend/updateListItem.php on line 25
+[22-Jun-2017 18:07:30 UTC] PHP Stack trace:
+[22-Jun-2017 18:07:30 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/updateListItem.php:0
+[22-Jun-2017 18:09:26 UTC] PHP Fatal error:  Cannot use object of type stdClass as array in /home/ubuntu/workspace/Group10/backend/updateListItem.php on line 12
+[22-Jun-2017 18:09:26 UTC] PHP Stack trace:
+[22-Jun-2017 18:09:26 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/updateListItem.php:0

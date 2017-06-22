@@ -81,10 +81,11 @@
 			<label class="column-fourth">Due date</label>
 			
 			<input class="form-control"
-		       ng-model="list.due_date"
 		       ng-model-options="{ updateOn: 'blur' }"
 		       placeholder="Pick a due date"
-		       moment-picker="ctrl.stringDate">
+		       moment-picker="list.due_date"
+		       start-date="list.dueDate"
+		       ng-model="list.due_date">
 					
 		</div>
 	
