@@ -2,16 +2,20 @@
 	session_start();
 
 	header("Access-Control-Allow-Origin: *");
-	header("Content-Type: application/json; charset=UTF-8");
+//	header("Content-Type: application/json; charset=UTF-8");
 	
 	require('./config.php');
 
 	//TODO: Point this to wherever the actual data is coming from. This is test data. 
-	$jsonData = file_get_contents('sampleData_updateListItem.json');
-	$data = json_decode($jsonData, true);
+	$jsonData = file_get_contents("php://input");
+	$posted = json_decode($jsonData, true);
+	$data = $posted["data"];
+	
 
+	
 	$id = $data["id"];
-
+	
+	
 	$sql = "SELECT * FROM listitems where id = ".$id.";";
 	$result = $conn->query($sql);
 
@@ -21,12 +25,13 @@
 		//Set the bound variables to the data passed in.  If that is null, set it to what's already in the DB.
 		$name = $data["name"] ?: $row["name"];
 		$description = $data["description"] ?: $row["description"];
-		$dueDate = $data["dueDate"] ?: $row["due_date"];
+		$dueDate = date('Y-m-d H:i:s', strtotime($data["due_date"]))  ?: $row["due_date"];
 		$location = $data["location"] ?: $row["location"];
 		$priority = $data["priority"] ?: $row["priority"];
 		
 	} else {
 		echo "No list item was found";
+
 	}
 
 	// prepare and bind

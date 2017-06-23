@@ -1,7 +1,7 @@
 <?php
 
     
-    if(function_exists("getenv"))
+    if(true)
     {
         $servername = getenv('IP');
         $username = getenv('C9_USER');

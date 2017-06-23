@@ -6,12 +6,12 @@ header("Content-Type: application/json; charset=UTF-8");
 
 require('./config.php');
 
-$jsonData = file_get_contents('sampleData_getSharedItemsByUser.json');
-$data = json_decode($jsonData, true);
+$jsonData = file_get_contents("php://input");
+$data = json_decode($jsonData);
 
-$userId = $data["userId"];
+$userId = 1; //$data["userId"];
 
-$result = $conn->query("SELECT * FROM listitems INNER JOIN sharedlistitems ON listitems.user_id = sharedlistitems.user_id AND listitems.id = sharedlistitems.list_id WHERE sharedlistitems.user_id = ".$userId.";");
+$result = $conn->query("SELECT * FROM listitems INNER JOIN sharedlistitems ON listitems.id = sharedlistitems.list_id WHERE sharedlistitems.user_id = ".$userId.";");
 
 
 $outp = "";
@@ -19,6 +19,7 @@ while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
     if ($outp != "") {$outp .= ",";}
     $outp .= '{"name":"'  		. $rs["name"] 		. '",';
     $outp .= '"description":"'  . $rs["description"]. '",';
+    $outp .= '"id":"'           . $rs["id"].          '",';
     $outp .= '"location":"'		. $rs["location"]	. '",';
     $outp .= '"dueDate":"'		. $rs["due_date"]	. '",';
     $outp .= '"createdDate":"'  . $rs["created"]. '",';
