@@ -169,3 +169,15 @@
 [22-Jun-2017 18:09:26 UTC] PHP Fatal error:  Cannot use object of type stdClass as array in /home/ubuntu/workspace/Group10/backend/updateListItem.php on line 12
 [22-Jun-2017 18:09:26 UTC] PHP Stack trace:
 [22-Jun-2017 18:09:26 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/updateListItem.php:0
+[23-Jun-2017 16:28:50 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/ubuntu/workspace/Group10/backend/getSharedWith.php on line 18
+[23-Jun-2017 16:28:50 UTC] PHP Stack trace:
+[23-Jun-2017 16:28:50 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/getSharedWith.php:0
+[23-Jun-2017 16:39:31 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/ubuntu/workspace/Group10/backend/getSharedWith.php on line 18
+[23-Jun-2017 16:39:31 UTC] PHP Stack trace:
+[23-Jun-2017 16:39:31 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/getSharedWith.php:0
+[23-Jun-2017 16:40:32 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/ubuntu/workspace/Group10/backend/getSharedWith.php on line 18
+[23-Jun-2017 16:40:32 UTC] PHP Stack trace:
+[23-Jun-2017 16:40:32 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/getSharedWith.php:0
+[23-Jun-2017 16:40:39 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/ubuntu/workspace/Group10/backend/getSharedWith.php on line 18
+[23-Jun-2017 16:40:39 UTC] PHP Stack trace:
+[23-Jun-2017 16:40:39 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/getSharedWith.php:0

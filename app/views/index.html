@@ -4,7 +4,7 @@
 </head>
 <h1 id="heading" align="center"></h1> 
 <div class="top-right-corner button" ng-show="user != null">
-	<button type="button" style="font-size: 16px; border-radius:4px;">Logout</button>
+	<button type="button" style="font-size: 16px; border-radius:4px;" ng-click="logout()">Logout</button>
 	<a ng-href="#!add">Add Item</a>
 </div>
 
@@ -25,7 +25,8 @@
 	<select name="select-sort" ng-model="sort">
 		<option ng-value="'createdDate'">Most Recently Created</option>
 		<option ng-value="'-createdDate'">Least Recently Created</option>
-		<option ng-value="'priority'">Priority</option>
+		<option ng-value="'-priority'">Priority (Highest)</option>
+		<option ng-value="'priority'">Priority (Lowest)</option>
 		<option ng-value="'dueDate'">Due Date (newest first)</option>
 		<option ng-value="'shared'">Shared First </option>
 	
@@ -34,26 +35,53 @@
 
 <br/><hr/>
 
-<div id="list">
-	<div  ng-style="item.shared ? {'background-color':'yellow'} : {}" id="list-item" class="transbox" ng-repeat="item in todo | orderBy: sort track by item.id">
+<div id="list" ng-show="!sharing">
+	<div  ng-style="item.shared ? {'background-color':'yellow'} : {}" id="list-item" class="transbox" ng-repeat="item in todo | orderBy: sort track by item.id" >
 		<p>Name: {{ item.name }}</p>
 		<p>Description: {{ item.description }} </p>
-		<!--<p ng-show="item.location.length > 0">Location: {{ item.location }}</p>-->
 		<p ng-show="item.location.length > 0">Location: <a ng-href="http://maps.google.com/?q={{ item.location }}">{{ item.location }}</a></p>
 		<p ng-show="item.dueDate.length > 0">Due Date: {{ item.dueDate | date:'medium' }} </p>
-		<p ng-show="item.priority.length > 0">Priority: {{ item.priority }}</p>
+		<p ng-show="item.priority > 0">Priority: {{ item.priority_name }}</p>
 		<p ng-show="item.tags.length > 0">
 			Tags: <span ng-repeat="tag in item.tags">
 				{{ tag + " "}}
 			</span> 
 		</p>
 		<p>
-			<a ng-href="#!update/{{item.id}}">Update </a>
+			<a ng-href="#!update/{{item.id}}"> Update </a> 
+			<button ng-click="share(item)"> Share </button>
+			<button ng-hide="item.shared" type="button" ng-click="delete(item.id)">Delete</button>
+		
 		</p>
-		<p> 
-			<button type="button" ng-click="delete(item.id)">Delete</button>
-		</p>
+		
+	</div>
+
+
+<style type="text/css">
+		.column-half {
+		width: 50%;
+		float:left;
+		display: inline;
+		padding-bottom: 5px;
+	}
+	
+</style>
+</div>
+	<div style="width:70%; margin: auto;" id="list share"  ng-show="sharing">
+		<div class="column-half">
+			List Shared With:
+			<ul>
+				<li ng-repeat="user in sharedUsers"> {{ user.name}} <button type="button" ng-click="remove(user)">Remove</button></li>
+			</ul>
+		</div>
+		<div class="column-half">
+			<label class="column-fourth">Share With </label>
+			<select>
+				<option ng-model="sharedUser" ng-repeat="user in usersToShare" ng-value="user.id">{{ user.name }}</option>		
+			</select>
+			<button ng-click="saveUser()" ng-model="aa" >Save!</button>
+		</div>
 
 	</div>
-</div>
+	
 </html>

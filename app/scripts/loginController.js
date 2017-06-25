@@ -19,8 +19,25 @@
 
 		$scope.go = function()
 		{
-			$location.path("main");
-			console.log($scope.login);
+			function handleError(data){
+				console.log(data);
+				console.log("!!!Errror");
+			}
+			function handleSuccess(data)
+			{
+				console.log(data);
+				$location.path("main");
+			}
+			var request = $http({
+	            method: "post",
+	            url: "backend/login.php",
+	            data: { username: '', password: '' },
+	            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+	        });
+        	return( request.then( handleSuccess, handleError ));
+        	
+			
+	
 			/*
 			$http.post('app/content/json/login.php', $scope.login)
 			.then(function(res){

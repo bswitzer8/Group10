@@ -9,11 +9,6 @@
 			templateUrl: "app/views/login.html",
 			controller: "loginController"
 		})
-		.when("/logout", {
-			title: "Logout",
-			templateUrl: "app/views/login.html",
-			controller: "logoutController"
-		})
 		.when("/register", {
 			title: "Register",
 			templateUrl: "app/views/register.html",
