@@ -3,22 +3,7 @@
 	var app = angular.module("Listastic"); 
 	
 	app.config(["$routeProvider", function($routeProvider) {
-		$routeProvider.
-		when("/login", {
-			title: "Login",
-			templateUrl: "app/views/login.html",
-			controller: "loginController"
-		})
-		.when("/register", {
-			title: "Register",
-			templateUrl: "app/views/register.html",
-			controller: "registerController"
-		})
-		.when("/forgetpassword", {
-			title: "Forgot Password",
-			templateUrl: "app/views/forgetpassword.html",
-			controller: "forgotController"
-		})
+		$routeProvider
 		.when("/main", {
 			title: "Listastic!",
 			templateUrl: "app/views/index.html",
@@ -35,36 +20,16 @@
 			controller: "updateItemController"
 		})
 		.when("/", {
-			title: "Login",
-			templateUrl: "app/views/login.html",
-			controller: "loginController",
-			role: "0"
+			title: "Listastic!",
+			templateUrl: "app/views/index.html",
+			controller: "mainController",
+			role: 0
 		})
 		.otherwise({
-			redirectTo: "/login"
+			redirectTo: "/index"
 		});
 	}]);
-	/*
-    .run(["$rootScope", "$location", "Data", function ($rootScope, $location, Data) {
-        $rootScope.$on("$routeChangeStart", function (event, next, current) {
-            $rootScope.authenticated = false;
-            Data.get("session").then(function (results) {
-                if (results.uid) {
-                    $rootScope.authenticated = true;
-                    $rootScope.uid = results.uid;
-                    $rootScope.name = results.name;
-                    $rootScope.email = results.email;
-                } else {
-                    var nextUrl = next.$$route.originalPath;
-                    if (nextUrl == "/signup" || nextUrl == "/login") {
 
-                    } else {
-                        $location.path("/login");
-                    }
-                }
-            });
-        });
-	}]);*/
 })();
 	
 	

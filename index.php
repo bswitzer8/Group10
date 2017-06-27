@@ -1,6 +1,6 @@
 <?php 
 
-require 'db.php';
+require 'backend/config.php';
 session_start();
 
 ?>
@@ -8,10 +8,17 @@ session_start();
 <html>
 <head>
   <title>Login Form</title>
-  <?php include 'css/css.html'; ?>
+  <?php if(!isset($_SESSION["user_id"]) && empty($_SESSION["user_id"])) include 'css/css.html'; ?>
 </head>
 
 <?php 
+
+if(isset($_SESSION["user_id"]) && !empty($_SESSION["user_id"])) 
+{
+  
+  require 'app/views/main.html';
+  exit();
+}
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') 
 {
