@@ -1,12 +1,11 @@
 <?php
-/* Displays all error messages */\
-  // we can just remove this. 
+/* Displays all success messages */\
 session_start();
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Error</title>
+  <title>Success</title>
   <?php include 'css/css.html'; ?>
 </head>
 <body>

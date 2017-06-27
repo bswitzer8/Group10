@@ -1,6 +1,5 @@
 <?php
 /* Displays all error messages */\
-  // we can just remove this. 
 session_start();
 ?>
 <!DOCTYPE html>
