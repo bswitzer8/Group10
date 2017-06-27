@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     
     elseif (isset($_POST['register'])) { 
         
-        require 'register.php';
+        require 'backend/register.php';
         
     }
 }

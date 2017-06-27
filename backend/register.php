@@ -2,6 +2,7 @@
 /* Registration process, inserts user info into the database 
    and sends account confirmation email message
  */
+require('backend/config.php');
 
 // Set session variables to be used on profile.php page
 
@@ -19,7 +20,7 @@ $email = $_POST['email'];
 $password = $_POST['password'];
       
 // Check if user with that email already exists
-$result = $mysqli->query("SELECT * FROM users WHERE email='$email'") or die($mysqli->error());
+$result = $conn->query("SELECT * FROM users WHERE email='$email'") or die($conn->error());
 
 // We know user email exists if the rows returned are more than 0
 if ( $result->num_rows > 0 ) {
@@ -39,5 +40,6 @@ else { // Email doesn't already exist in a database, proceed...
     $sql = "INSERT INTO users (name, email, password) " 
             . "VALUES ('$name','$email','$password')";
 
+    $conn->query($sql) or die($conn->error());
 
 }
