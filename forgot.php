@@ -1,13 +1,13 @@
 <?php 
 /* Reset your password form, sends reset.php password link */
-require 'db.php';
 session_start();
+require 'backend/config.php';
 
 // Check if form submitted with method="post"
 if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) 
 {   
-    $email = $mysqli->escape_string($_POST['email']);
-    $result = $mysqli->query("SELECT * FROM users WHERE email='$email'");
+    $email = $conn->escape_string($_POST['email']);
+    $result = $conn->query("SELECT * FROM users WHERE email='$email'");
 
     if ( $result->num_rows == 0 ) // User doesn't exist
     { 
@@ -19,7 +19,6 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
         $user = $result->fetch_assoc(); // $user becomes array with user data
         
         $email = $user['email'];
-        $hash = $user['hash'];
         $first_name = $user['first_name'];
 
         // Session message to display on success.php
@@ -36,11 +35,11 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
 
         Please click this link to reset your password:
 
-        http://localhost/login-system/reset.php?email='.$email.'&hash='.$hash;  
+        http://139.62.210.151/~group10/cop4813/reset.php?email='.$email;
 
         mail($to, $subject, $message_body);
 
-        header("location: success.php");
+        echo "<script>window.location.replace('success.php')</script>";
   }
 }
 ?>
