@@ -4,8 +4,6 @@
  */
 require('backend/config.php');
 
-// Set session variables to be used on profile.php page
-
 // Ben: I'll do the angular stuff here.
 $_SESSION['email'] = $_POST['email'];
 
@@ -26,8 +24,7 @@ $result = $conn->query("SELECT * FROM users WHERE email='$email'") or die($conn-
 if ( $result->num_rows > 0 ) {
     // Ben: I'll fix the error handling.
     $_SESSION['message'] = 'User with this email already exists!';
-    header("<script>window.location.replace(‘error.php’)</script>");
-    
+    echo "<script>window.location.replace('error.php')</script>";
 }
 else { // Email doesn't already exist in a database, proceed...
 
