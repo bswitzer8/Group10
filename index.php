@@ -1,41 +1,118 @@
+<?php 
+
+require 'db.php';
+session_start();
+
+?>
 <!DOCTYPE html>
-<html lang="en-US">
-	<head>
-		<title>Listastic!</title>
-		<meta charset="UTF-8"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		<!-- include angular js -->
-		<link rel="stylesheet" href="app/content/css/login.css"></link>
-		<link rel="stylesheet" href="app/content/css/main.css"></link>
-		<link href="//rawgit.com/indrimuska/angular-moment-picker/master/dist/angular-moment-picker.css" rel="stylesheet">
-	</head>
-	<body ng-app="Listastic">
-			<div class="container">
-				<div data-ng-view="" id="ng-view">
+<html>
+<head>
+  <title>Login Form</title>
+  <?php include 'css/css.html'; ?>
+</head>
 
-			</div>
+<?php 
 
+if ($_SERVER['REQUEST_METHOD'] == 'POST') 
+{
+    if (isset($_POST['login'])) { 
 
-		</div>
-	</body>
-	
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-route.js"></script>
-	 <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment-with-locales.js"></script>
-    <script src="//rawgit.com/indrimuska/angular-moment-picker/master/dist/angular-moment-picker.js"></script>
+        require 'login.php';
+        
+    }
     
- <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment-with-locales.js"></script>
-    <script src="//rawgit.com/indrimuska/angular-moment-picker/master/dist/angular-moment-picker.js"></script>
+    elseif (isset($_POST['register'])) { 
+        
+        require 'register.php';
+        
+    }
+}
 
-	<script type="text/javascript" src="app/app.js"></script>
-	<script type="text/javascript" src="app/scripts/addItemController.js"></script>
-	<script type="text/javascript" src="app/scripts/updateItemController.js"></script>
-	<script type="text/javascript" src="app/scripts/mainController.js"></script>
-	<script type="text/javascript" src="app/scripts/loginController.js"></script>
-	<script type="text/javascript" src="app/scripts/registerController.js"></script>
-	<script type="text/javascript" src="app/scripts/forgotController.js"></script>
+?>
+<body>
+  <div class="form">
+      
+      <ul class="tab-group">
+        <li class="tab"><a href="#signup">Register</a></li>
+        <li class="tab active"><a href="#login">Sign In</a></li>
+      </ul>
+      
+      <div class="tab-content">
 
-	<script type="text/javascript" src="app/scripts/routes.js"></script>
+         <div id="login">   
+          <h1>Listastic!</h1>
+          
+          <form action="index.php" method="post" autocomplete="off">
+          
+            <div class="field-wrap">
+            <label>
+              Email Address<span class="req">*</span>
+            </label>
+            <input type="email" required autocomplete="off" name="email"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Password<span class="req">*</span>
+            </label>
+            <input type="password" required autocomplete="off" name="password"/>
+          </div>
+          
+          <p class="forgot"><a href="forgot.php">Forgot Password?</a></p>
+          
+          <button class="button button-block" name="login" />Sign In</button>
+          
+          </form>
+
+        </div>
+          
+        <div id="signup">   
+          <h1>Join Listastic!</h1>
+          
+          <form action="index.php" method="post" autocomplete="off">
+          
+          <div class="top-row">
+            <div class="field-wrap">
+              <label>
+                First Name<span class="req">*</span>
+              </label>
+              <input type="text" required autocomplete="off" name='firstname' />
+            </div>
+        
+            <div class="field-wrap">
+              <label>
+                Last Name<span class="req">*</span>
+              </label>
+              <input type="text"required autocomplete="off" name='lastname' />
+            </div>
+          </div>
+
+          <div class="field-wrap">
+            <label>
+              Email Address<span class="req">*</span>
+            </label>
+            <input type="email"required autocomplete="off" name='email' />
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Set Password<span class="req">*</span>
+            </label>
+            <input type="password"required autocomplete="off" name='password'/>
+          </div>
+          
+          <button type="submit" class="button button-block" name="register" />Register</button>
+          
+          </form>
+
+        </div>  
+        
+      </div><!-- tab-content -->
+      
+</div> <!-- /form -->
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script src="js/index.js"></script>
+
+</body>
 </html>
-
-
