@@ -1,14 +1,14 @@
 <?php 
 
-require 'backend/config.php';
-session_start();
+  require 'backend/config.php';
+  session_start();
 
 ?>
 <!DOCTYPE html>
 <html>
 <head>
   <title>Login Form</title>
-  <?php if(!isset($_SESSION["user_id"]) && empty($_SESSION["user_id"])) include 'css/css.html'; ?>
+  <?php if(!isset($_SESSION["user_id"])) include 'css/css.html'; ?>
 </head>
 
 <?php 
@@ -23,9 +23,7 @@ if(isset($_SESSION["user_id"]) && !empty($_SESSION["user_id"]))
 if ($_SERVER['REQUEST_METHOD'] == 'POST') 
 {
     if (isset($_POST['login'])) { 
-
         require 'login.php';
-        
     }
     
     elseif (isset($_POST['register'])) { 
