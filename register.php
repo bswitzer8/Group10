@@ -25,7 +25,7 @@ $result = $mysqli->query("SELECT * FROM users WHERE email='$email'") or die($mys
 if ( $result->num_rows > 0 ) {
     // Ben: I'll fix the error handling.
     $_SESSION['message'] = 'User with this email already exists!';
-    header("location: error.php");
+    header("<script>window.location.replace(‘error.php’)</script>");
     
 }
 else { // Email doesn't already exist in a database, proceed...

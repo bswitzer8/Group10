@@ -234,3 +234,15 @@
 [27-Jun-2017 02:16:44 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/ubuntu/workspace/Group10/backend/getSharedWith.php on line 18
 [27-Jun-2017 02:16:44 UTC] PHP Stack trace:
 [27-Jun-2017 02:16:44 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/getSharedWith.php:0
+[27-Jun-2017 03:26:00 UTC] PHP Warning:  include(css/css.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/Group10/backend/logout.php on line 24
+[27-Jun-2017 03:26:00 UTC] PHP Stack trace:
+[27-Jun-2017 03:26:00 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/logout.php:0
+[27-Jun-2017 03:26:00 UTC] PHP Warning:  include(): Failed opening 'css/css.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/Group10/backend/logout.php on line 24
+[27-Jun-2017 03:26:00 UTC] PHP Stack trace:
+[27-Jun-2017 03:26:00 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/logout.php:0
+[27-Jun-2017 03:26:42 UTC] PHP Warning:  include(css/css.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/Group10/backend/logout.php on line 25
+[27-Jun-2017 03:26:42 UTC] PHP Stack trace:
+[27-Jun-2017 03:26:42 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/logout.php:0
+[27-Jun-2017 03:26:42 UTC] PHP Warning:  include(): Failed opening 'css/css.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/Group10/backend/logout.php on line 25
+[27-Jun-2017 03:26:42 UTC] PHP Stack trace:
+[27-Jun-2017 03:26:42 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/logout.php:0

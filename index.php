@@ -1,14 +1,14 @@
 <?php 
 
-require 'backend/config.php';
-session_start();
+  require 'backend/config.php';
+  session_start();
 
 ?>
 <!DOCTYPE html>
 <html>
 <head>
   <title>Login Form</title>
-  <?php if(!isset($_SESSION["user_id"]) &&  empty($_SESSION["user_id"])) include 'css/css.html'; ?>
+  <?php if(!isset($_SESSION["user_id"])) include 'css/css.html'; ?>
 </head>
 
 <?php 
