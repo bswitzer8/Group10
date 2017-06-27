@@ -4,8 +4,6 @@
 	var app = angular.module("Listastic"); 
 	
 	app.controller("updateItemController", function($scope, $filter, $location, $routeParams, $http){
-	 
-		console.log($routeParams.id);
 		
 		  $scope.priorities = [
 	         { numeric: "5", name: "Urgent" },
@@ -15,14 +13,18 @@
              { numeric: "1", name: "None" }
 	    ];
 			
+		$http.get('backend/getUser.php')
+			.then(function(res){
+				$scope.user = res.data;
+		});
+		
 		$scope.cancel = function(){
 			  $location.path("main");
 		}
 		
-			$scope.go = function()
+		$scope.go = function()
 		{
-			console.log("test");
-		    console.log($scope.list);
+		
 		    
 		    function handleError(argument) {
 			    console.log(argument);
@@ -77,9 +79,7 @@
 			// redirect?
 		}
 		
-	   
-	
-	
+
 
 	});
 })();

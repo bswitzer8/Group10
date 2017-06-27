@@ -1,72 +1,39 @@
-<style type="text/css">
-	p, label { color: white; }
-	
-	.content {
-		margin: 			auto;
-		width: 				80%;
-	
-		padding: 			10px;
-	}
-				
-	.row {
-		padding-bottom: 10px;
-	}
-	
-	.row label {
-		font-weight:bold;
-		padding-right: 40px;	
-	}
-	
-	
-	.column-fourth {
-		width: 25%;
-		display: inline;
-		float:left;
-		padding-bottom: 5px;
-	
-	}
-	
-	.column-third {
-		width: 33%;
-		float:left;
-		display: inline;
-		padding-bottom: 5px;
-	}
-	
-	.column-half {
-		width: 50%;
-		float:left;
-		display: inline;
-		padding-bottom: 5px;
-	}
-	
-	.column-threefourth {
-		width: 75%;
-		float:left;
-		display: inline;
-		padding-bottom: 5px;
-	}
-	.column-whole {
-		width: 100%;
-		float: left;
-		display: inline;
-		padding-bottom: 5px;
-	}
-</style>
-		
+
 		
 <div class="content">
 		<div class="top-right-corner button" ng-show="user != null">
 			<button type="button" style="font-size: 16px; border-radius:4px;">Logout</button>
 	
 		</div>
-
+		
+		
+		
+			
+	<form name="update"  >
+			<div class="row" >
+					<div class="column-fourth">
+						<button class="" 
+								type = "button" 
+								ng-click="add.$valid && go()"
+								name = "Save"> Save 
+						</button>
+						<button class="" 
+							type = "button"
+							name = "cancel"
+							ng-click="cancel()">
+							Cancel
+						</button>
+					</div>
+				<br/>
+		   </div>
+			<hr>
 	
 		<div class="content">
 			<div class="row">
 				<label class="column-fourth">Name</label>
 				<input type = "text" 
-					   name = "name" ng-model="list.name" placeholder = "Task Name" 
+					   name = "name" ng-class="{ error: !update.$valid }" 
+					   ng-model="list.name" placeholder = "Task Name" 
 					   required/>
 		</div>
 
@@ -107,21 +74,7 @@
 			</textarea>
 		</div>
 		
-
-		<hr>
-		<div class="row">
-			<button class="" 
-					type = "button" 
-					ng-click="go()"
-					name = "Save"> Save
-			</button>
-			<button class="" 
-				type = "button"
-				name = "cancel"
-				ng-click="cancel()">
-				Cancel
-			</button>
-	
-	   </div>
+			
+		 </form>
 	</div>
 </div>

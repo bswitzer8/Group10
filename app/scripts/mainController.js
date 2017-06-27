@@ -13,6 +13,7 @@
 	    };
 		
 		$scope.checked = {};
+		
 		$scope.tagIt = function(tag)
 		{
 			$scope.todo = $scope.rawTodo;
@@ -46,7 +47,12 @@
 		}
 		
 		// we would get the user like the data
-		$scope.user = { name: "bob"};
+		$http.get('backend/getUser.php')
+			.then(function(res){
+				$scope.user = res.data;
+		});
+			
+
 	
 		$scope.init = function(){
 			$scope.todo = [];
@@ -56,7 +62,7 @@
 			// this needs to be changed to get from a php source
 			$http.get('backend/getListItems.php')
 				.then(function(res){
-					console.log(res);
+			
 				 
 				 if(res.data.records.length == 0) return; // NO POINT
 				 
@@ -102,29 +108,41 @@
 			item.sharing = true;
 			
 			// pull all the users that are currently shared.
+			var sh = [];
 			$http.get('backend/getUsers.php')
 				.then(function(res){
 			 
 					$scope.usersToShare = res.data;
-			});
+					
+					$http({
+						method: "post",
+			            url: "backend/getSharedWith.php",
+			            data: { 'list_id': item.id  },
+			            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+					 })
+					.then(function(res){
+						$scope.sharedUsers = res.data;
+						
+						if($scope.sharedUsers.length > 0){
+						angular.forEach($scope.usersToShare, function(f){
+							for(var i = 0; i < res.data.length; ++i)
+							{	
+								if(f.id != $scope.sharedUsers[i].id)
+								{
+								
+									sh.push(f);
+									break;
+								}
+							}
+							$scope.usersToShare = sh;
+						});
+						}
+					
+					
+					}); // end of getSharedWith
+				}); // end of thenGet
 			
-			$http({
-			    url: 'backend/getSharedWith.php',
-			    method: "GET",
-			    params: {'list_id': item.id}
-			 })
-				.then(function(res){
-
-					$scope.sharedUsers = res.data;
-					
-					console.log(res.data);
-					var f = [];
-					for(var i = 0; i < $scope.usersToShare.length; ++i)
-					{
-						if($scope.usersToShare[i] ) break;
-					
-					}
-			});
+	
 			
 			$scope.sharing = item;
 		}
@@ -145,7 +163,7 @@
 				console.log(data);
 			}
 	
-		console.log($scope.sharedUser);
+
 			
 			 var request = $http({
 	            method: "post",
@@ -154,6 +172,33 @@
 	            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
 	        });
         	return( request.then( handleSuccess, handleError ) );
+		}
+		
+		$scope.removeShare = function(yep)
+		{
+
+			$http({
+	            method: "post",
+	            url: "backend/unshareListItem.php",
+	            data: { 'list_id': $scope.sharing.id, 'user_id': yep },
+	            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+	        }).then(
+	        	function(dat){ 
+	        		for(var i = 0; i < $scope.sharedUsers.length; ++i)
+	        		{
+	        			if($scope.sharedUsers[i].id == yep)
+	        			{
+	        			
+	        				$scope.share($scope.sharing);
+	        				break;
+	        			}
+	        		}
+	        		console.log(dat);
+	        	},
+	        
+	    		function(dat){
+	    			console.log(dat);
+	    		});
 		}
 	
 	

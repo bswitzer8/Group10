@@ -52,3 +52,67 @@ div.transbox {
 	opacity: 0.6;
 	filter: alpha(opacity=60); /* For IE8 and earlier */
 }
+
+
+	
+	.content {
+		margin: 			auto;
+		width: 				80%;
+	
+		padding: 			10px;
+	}
+				
+	.row {
+		padding-bottom: 10px;
+	}
+	
+	.row label {
+		font-weight:bold;
+		padding-right: 40px;	
+	}
+	
+	
+	.column-fourth {
+		width: 25%;
+		display: inline;
+		float:left;
+		padding-bottom: 5px;
+	
+	}
+	
+	.column-third {
+		width: 33%;
+		float:left;
+		display: inline;
+		padding-bottom: 5px;
+	}
+	
+	.column-half {
+		width: 50%;
+		float:left;
+		display: inline;
+		padding-bottom: 5px;
+	}
+	
+	.column-threefourth {
+		width: 75%;
+		float:left;
+		display: inline;
+		padding-bottom: 5px;
+	}
+	.column-whole {
+		width: 100%;
+		float: left;
+		display: inline;
+		padding-bottom: 5px;
+	}
+	.error {
+		border: solid 2px red;
+		background-color: #eca3a3;
+	
+	}
+	
+	.error div {
+		padding: 10px;
+	}
+	

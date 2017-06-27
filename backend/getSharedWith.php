@@ -1,8 +1,6 @@
 <?php
     session_start();
 
-    header("Access-Control-Allow-Origin: *");
-   
     require('./config.php');
 
 	if(isset($_SESSION["user_id"]) && !empty($_SESSION["user_id"])) 
@@ -12,7 +10,9 @@
 	
 		$list_id = 		$data["list_id"];
         
-        $result = $conn->query("SELECT * FROM users INNER JOIN sharedlistitems ON users.id = sharedlistitems.user_id WHERE sharedlistitems.list_id = ".$list_id.";");
+
+        
+        $result = $conn->query("SELECT users.name, users.id FROM users INNER JOIN sharedlistitems ON users.id = sharedlistitems.user_id WHERE sharedlistitems.list_id = ".$list_id.";");
         
         $outp = "";
         while($rs = $result->fetch_array(MYSQLI_ASSOC)) {

@@ -1,5 +1,5 @@
 <?php
- 
+
         $servername = "localhost"; 
         $username = "group10"; 
         $password = "droptables";
