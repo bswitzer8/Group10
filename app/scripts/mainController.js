@@ -2,7 +2,7 @@
 	/* global angular */
 	var app = angular.module("Listastic"); 
 
-	app.controller("mainController", function($scope, $location, $http){
+	app.controller("mainController", function($scope, $location, $http, $window){
 		
 		  $scope.priorities = {
 	         5: "Urgent" ,
@@ -65,8 +65,8 @@
 				  
 				 var associate = {};
 				 angular.forEach(res.data.filters, function(t){
-		
-				 	$scope.tags.push(t.name);
+			
+					if($scope.tags.indexOf(t.name) == -1)	$scope.tags.push(t.name);
 				 	
 				 	if(associate[t.list_id] == undefined) associate[t.list_id] = [];
 				 
@@ -116,6 +116,14 @@
 				.then(function(res){
 
 					$scope.sharedUsers = res.data;
+					
+					console.log(res.data);
+					var f = [];
+					for(var i = 0; i < $scope.usersToShare.length; ++i)
+					{
+						if($scope.usersToShare[i] ) break;
+					
+					}
 			});
 			
 			$scope.sharing = item;
@@ -123,6 +131,7 @@
 		
 		$scope.saveShare = function(){
 			
+
 			
 			function handleError(data)
 			{
@@ -132,14 +141,16 @@
 			}
 			
 			function handleSuccess(data){ 
+				$scope.sharing = false;
 				console.log(data);
 			}
-
+	
+		console.log($scope.sharedUser);
 			
 			 var request = $http({
 	            method: "post",
 	            url: "backend/shareListItem.php",
-	            data: { 'id': $scope.sharing.itemID, 'user_id': $scope.sharing.user_id },
+	            data: { 'list_id': $scope.sharing.id, 'user_id': $scope.sharedUser },
 	            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
 	        });
         	return( request.then( handleSuccess, handleError ) );
@@ -177,8 +188,8 @@
 			}
 			function handleSuccess(data)
 			{
-				console.log(data);
-				$location.path("login");
+				
+				$window.location.replace('../cop4813/index.php');
 			}
 			var request = $http({
 	            method: "post",

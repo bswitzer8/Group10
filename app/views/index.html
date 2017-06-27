@@ -10,7 +10,7 @@
 
 
 <div id="filters"> 
-	<div id="ck-button" ng-repeat="tag in tags track by $index">
+	<div id="ck-button" ng-repeat="tag in tags">
 	<label> 
 		<input type="checkbox" ng-value="true" ng-click="tagIt(tag);"/><span>{{ tag }} </span> 
 	</label>
@@ -58,15 +58,15 @@
 
 
 <style type="text/css">
-		.column-half {
+	.column-half {
 		width: 50%;
 		float:left;
 		display: inline;
 		padding-bottom: 5px;
 		background-color: #999999;
 	}
-	
 </style>
+
 </div>
 	<div style="width:70%; margin: auto;" id="list share"  ng-show="sharing">
 		<div class="column-half" ng-hide="sharedUsers.length == 0" style="padding:5px;">
@@ -80,10 +80,11 @@
 		</div>
 		<div class="column-half">
 			<label class="column-fourth">Share With </label>
-			<select>
-				<option ng-model="sharedUser" ng-repeat="user in usersToShare" ng-value="user.id">{{ user.name }}</option>		
+			<select ng-model="sharedUser">
+				<option  ng-repeat="user in usersToShare track by $index" ng-value="user.id">{{ user.name }}</option>		
 			</select>
-			<button ng-click="saveShare()">Save!</button>
+			<button type="button" ng-click="saveShare()">Save!</button>
+			<button type="button" ng-click="sharing = false">Cancel</button>
 		</div>
 
 	</div>
