@@ -4,7 +4,11 @@
  */
 
 // Set session variables to be used on profile.php page
+
+// Ben: I'll do the angular stuff here.
 $_SESSION['email'] = $_POST['email'];
+
+// We only have a Name field, not first and last
 $_SESSION['first_name'] = $_POST['firstname'];
 $_SESSION['last_name'] = $_POST['lastname'];
 
@@ -20,7 +24,7 @@ $result = $mysqli->query("SELECT * FROM users WHERE email='$email'") or die($mys
 
 // We know user email exists if the rows returned are more than 0
 if ( $result->num_rows > 0 ) {
-    
+    // Ben: I'll fix the error handling.
     $_SESSION['message'] = 'User with this email already exists!';
     header("location: error.php");
     
@@ -28,6 +32,10 @@ if ( $result->num_rows > 0 ) {
 else { // Email doesn't already exist in a database, proceed...
 
     // active is 0 by DEFAULT (no need to include it here)
+    // Ben: what is the hash about? We are suppose to hash the password.. 
+   // also, first_name and last_name doesn't exist. 
+   // Check over the listastic.sql to see the definition por favor.
+   
     $sql = "INSERT INTO users (first_name, last_name, email, password, hash) " 
             . "VALUES ('$first_name','$last_name','$email','$password', '$hash')";
 
