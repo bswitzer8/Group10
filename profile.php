@@ -1,4 +1,8 @@
+
+
 <?php
+// Ben: I don't think this will be needed actually.
+
 /* Displays user information and some useful messages */
 session_start();
 
