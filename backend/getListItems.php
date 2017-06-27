@@ -24,7 +24,17 @@
             $outp .= '"createdDate":"'  . $rs["created"]. '",';
             $outp .= '"priority":"'		. $rs["priority"]	. '"}';
         }
-        $outp ='{"records":['.$outp.']}';
+        
+        $result2 = $conn->query("SELECT f.filter, f.list_id FROM filters f JOIN listitems l ON f.list_id = l.id WHERE user_id= ".$user_id);
+        while($rs2 = $result2->fetch_array(MYSQLI_ASSOC)) {
+            if ($outpf != "") {$outpf .= ",";}
+            
+            $outpf .= '{"name":"'  		. $rs2["filter"] 		. '",';
+            $outpf .= '"list_id":"'		. $rs2["list_id"]	. '"}';
+        }
+        
+        
+        $outp ='{"records":['.$outp.'], "filters": ['.$outpf.']}';
         $conn->close();
         
         echo($outp);

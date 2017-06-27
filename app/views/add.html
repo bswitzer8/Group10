@@ -52,20 +52,50 @@
 		display: inline;
 		padding-bottom: 5px;
 	}
+	.error {
+		border: solid 2px red;
+		background-color: #eca3a3;
+	
+	}
+	
+	.error div {
+		padding: 10px;
+	}
 </style>
 		
 		
 <div class="content">
+		
 		<div class="top-right-corner button" ng-show="user != null">
 			<button type="button" style="font-size: 16px; border-radius:4px;">Logout</button>
-			<a ng-href="#!add">Add Item</a>
 		</div>
+		
+		
+	<form name="add"  >
 
+
+		<div class="content"> 
+			<div class="row" >
+					<div class="column-fourth">
+						<button class="" 
+								type = "button" 
+								ng-click="add.$valid && go()"
+								name = "Save"> Save 
+						</button>
+						<button class="" 
+							type = "button"
+							name = "cancel"
+							ng-click="cancel()">
+							Cancel
+						</button>
+					</div>
+				<br/>
+		   </div>
+			<hr>
 	
-		<div class="content">
 			<div class="row">
 				<label class="column-fourth">Name</label>
-				<input type = "text" 
+				<input type = "text" ng-class="{ error: !add.$valid }" 
 					   name = "name" ng-model="list.name" placeholder = "Task Name" 
 					   required/>
 		</div>
@@ -73,6 +103,7 @@
 		 <div class="row">
 			<label class="column-fourth">Priority</label>
 			<select  ng-model="list.priority">
+				<option value="">Select Priority</option>
 				<option ng-repeat="priority in priorities" ng-value="priority.numeric">{{ priority.name }}</option>		
 			</select>
 		</div>
@@ -106,21 +137,25 @@
 			</textarea>
 		</div>
 		
-
-		<hr>
 		<div class="row">
-			<button class="" 
-					type = "button" 
-					ng-click="go()"
-					name = "Save"> Save
-			</button>
-			<button class="" 
-				type = "button"
-				name = "cancel"
-				ng-click="cancel()">
-				Cancel
-			</button>
+			<label class="column-fourth">
+				Filters <button type="button"  style="float:right;" ng-click="addFilter()">Add</button>
+			</label>
+
+			<div class="column-half">
+				
+					<span ng-repeat="filter in filters">
+						<input type="text" ng-model="filter.name" style="margin-top: 5px;"/>
+						<button type="button" ng-click="filters.splice($index, 1);">X</button><br/>
+					</span>
+			</div>
+		
 	
-	   </div>
+		</div>
+		
+
+
+	
+	   </form>
 	</div>
 </div>

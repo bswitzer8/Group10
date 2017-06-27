@@ -13,7 +13,7 @@ $stmt->bind_param("ss", $list_id, $filter);
 	//TODO: Point this to wherever the actual data is coming from. This is test data. 
 $jsonData = file_get_contents("php://input");
 $data = json_decode($jsonData, true);
-print_r($data);
+$filter = $data["filter"];
 
 $list_id = $data["id"];
 

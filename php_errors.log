@@ -181,3 +181,56 @@
 [23-Jun-2017 16:40:39 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/ubuntu/workspace/Group10/backend/getSharedWith.php on line 18
 [23-Jun-2017 16:40:39 UTC] PHP Stack trace:
 [23-Jun-2017 16:40:39 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/getSharedWith.php:0
+[25-Jun-2017 15:05:09 UTC] PHP Warning:  mysql_insert_id(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/Group10/backend/addListItem.php on line 33
+[25-Jun-2017 15:05:09 UTC] PHP Stack trace:
+[25-Jun-2017 15:05:09 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/addListItem.php:0
+[25-Jun-2017 15:05:09 UTC] PHP   2. mysql_insert_id() /home/ubuntu/workspace/Group10/backend/addListItem.php:33
+[25-Jun-2017 15:05:09 UTC] PHP Warning:  mysql_insert_id(): A link to the server could not be established in /home/ubuntu/workspace/Group10/backend/addListItem.php on line 33
+[25-Jun-2017 15:05:09 UTC] PHP Stack trace:
+[25-Jun-2017 15:05:09 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/addListItem.php:0
+[25-Jun-2017 15:05:09 UTC] PHP   2. mysql_insert_id() /home/ubuntu/workspace/Group10/backend/addListItem.php:33
+[26-Jun-2017 22:00:52 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/ubuntu/workspace/Group10/backend/getSharedWith.php on line 18
+[26-Jun-2017 22:00:52 UTC] PHP Stack trace:
+[26-Jun-2017 22:00:52 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/getSharedWith.php:0
+[26-Jun-2017 23:51:27 UTC] PHP Warning:  Illegal offset type in /home/ubuntu/workspace/Group10/backend/addListItem.php on line 38
+[26-Jun-2017 23:51:27 UTC] PHP Stack trace:
+[26-Jun-2017 23:51:27 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/addListItem.php:0
+[26-Jun-2017 23:51:27 UTC] PHP Warning:  Illegal offset type in /home/ubuntu/workspace/Group10/backend/addListItem.php on line 38
+[26-Jun-2017 23:51:27 UTC] PHP Stack trace:
+[26-Jun-2017 23:51:27 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/addListItem.php:0
+[26-Jun-2017 23:51:27 UTC] PHP Warning:  Illegal offset type in /home/ubuntu/workspace/Group10/backend/addListItem.php on line 38
+[26-Jun-2017 23:51:27 UTC] PHP Stack trace:
+[26-Jun-2017 23:51:27 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/addListItem.php:0
+[27-Jun-2017 00:09:22 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/ubuntu/workspace/Group10/backend/getListItems.php on line 17
+[27-Jun-2017 00:09:22 UTC] PHP Stack trace:
+[27-Jun-2017 00:09:22 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/getListItems.php:0
+[27-Jun-2017 00:11:04 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/ubuntu/workspace/Group10/backend/getListItems.php on line 17
+[27-Jun-2017 00:11:04 UTC] PHP Stack trace:
+[27-Jun-2017 00:11:04 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/getListItems.php:0
+[27-Jun-2017 00:11:23 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/ubuntu/workspace/Group10/backend/getListItems.php on line 17
+[27-Jun-2017 00:11:23 UTC] PHP Stack trace:
+[27-Jun-2017 00:11:23 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/getListItems.php:0
+[27-Jun-2017 00:12:28 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/ubuntu/workspace/Group10/backend/getListItems.php on line 17
+[27-Jun-2017 00:12:28 UTC] PHP Stack trace:
+[27-Jun-2017 00:12:28 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/getListItems.php:0
+[27-Jun-2017 01:10:07 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/ubuntu/workspace/Group10/backend/getListItems.php on line 29
+[27-Jun-2017 01:10:07 UTC] PHP Stack trace:
+[27-Jun-2017 01:10:07 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/getListItems.php:0
+[27-Jun-2017 01:12:41 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/ubuntu/workspace/Group10/backend/getListItems.php on line 29
+[27-Jun-2017 01:12:41 UTC] PHP Stack trace:
+[27-Jun-2017 01:12:41 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/getListItems.php:0
+[27-Jun-2017 01:14:03 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/ubuntu/workspace/Group10/backend/getListItems.php on line 29
+[27-Jun-2017 01:14:03 UTC] PHP Stack trace:
+[27-Jun-2017 01:14:03 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/getListItems.php:0
+[27-Jun-2017 02:14:45 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/ubuntu/workspace/Group10/backend/getSharedWith.php on line 18
+[27-Jun-2017 02:14:45 UTC] PHP Stack trace:
+[27-Jun-2017 02:14:45 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/getSharedWith.php:0
+[27-Jun-2017 02:15:39 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/ubuntu/workspace/Group10/backend/getSharedWith.php on line 18
+[27-Jun-2017 02:15:39 UTC] PHP Stack trace:
+[27-Jun-2017 02:15:39 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/getSharedWith.php:0
+[27-Jun-2017 02:16:28 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/ubuntu/workspace/Group10/backend/getSharedWith.php on line 18
+[27-Jun-2017 02:16:28 UTC] PHP Stack trace:
+[27-Jun-2017 02:16:28 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/getSharedWith.php:0
+[27-Jun-2017 02:16:44 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/ubuntu/workspace/Group10/backend/getSharedWith.php on line 18
+[27-Jun-2017 02:16:44 UTC] PHP Stack trace:
+[27-Jun-2017 02:16:44 UTC] PHP   1. {main}() /home/ubuntu/workspace/Group10/backend/getSharedWith.php:0
