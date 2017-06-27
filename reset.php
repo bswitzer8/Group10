@@ -2,27 +2,26 @@
 /* The password reset form, the link to this page is included
    from the forgot.php email message
 */
-require 'db.php';
+require 'backend/config.php';
 session_start();
 
-// Make sure email and hash variables aren't empty
-if( isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['hash']) && !empty($_GET['hash']) )
+// Make sure email variables aren't empty
+if( isset($_GET['email']) && !empty($_GET['email']) )
 {
-    $email = $mysqli->escape_string($_GET['email']); 
-    $hash = $mysqli->escape_string($_GET['hash']); 
+    $email = $conn->escape_string($_GET['email']);
 
-    // Make sure user email with matching hash exist
-    $result = $mysqli->query("SELECT * FROM users WHERE email='$email' AND hash='$hash'");
+    // Make sure user email exists
+    $result = $conn->query("SELECT * FROM users WHERE email='$email'");
 
     if ( $result->num_rows == 0 )
     { 
         $_SESSION['message'] = "You have entered invalid URL for password reset!";
-        header("<script>window.location.replace(‘error.php’)</script>");
+        echo "<script>window.location.replace('error.php')</script>";
     }
 }
 else {
     $_SESSION['message'] = "Sorry, verification failed, try again!";
-    header("<script>window.location.replace(‘error.php’)</script>");
+    echo "<script>window.location.replace('error.php')</script>";
 }
 ?>
 <!DOCTYPE html>
@@ -56,8 +55,7 @@ else {
           
           <!-- This input field is needed, to get the email of the user -->
           <input type="hidden" name="email" value="<?= $email ?>">    
-          <input type="hidden" name="hash" value="<?= $hash ?>">    
-              
+
           <button class="button button-block"/>Apply</button>
           
           </form>
