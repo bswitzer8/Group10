@@ -37,7 +37,7 @@ else {
 
           <h1>Choose Your New Password</h1>
           
-          <form action="reset_password.php" method="post">
+          <form action="backend/reset_password.php" method="post">
               
           <div class="field-wrap">
             <label>

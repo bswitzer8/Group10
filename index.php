@@ -23,7 +23,7 @@ if(isset($_SESSION["user_id"]) && !empty($_SESSION["user_id"]))
 if ($_SERVER['REQUEST_METHOD'] == 'POST') 
 {
     if (isset($_POST['login'])) { 
-        require 'login.php';
+        require 'backend/login.php';
     }
     
     elseif (isset($_POST['register'])) { 
