@@ -53,7 +53,7 @@ if (isset($_GET['email']) && !empty($_GET['email'])) {
         <!-- This input field is needed, to get the email of the user -->
         <input type="hidden" name="email" value="<?= $email ?>">
 
-        <button class="button button-block"/>
+        <button class="button button-block">
         Apply</button>
 
     </form>

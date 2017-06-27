@@ -20,9 +20,13 @@ session_start();
         endif;
         ?>
     </p>
-    <a href="index.php">
-        <button class="button button-block"/>
-        Home</button></a>
+
+    <button class="button button-block" onclick="location.href='index.php';">
+        Home
+    </button>
+
+    <button class="button button-block" onclick="location.href='index.php';">Home</button>
+
 </div>
 </body>
 </html>

@@ -1,8 +1,11 @@
+<!DOCTYPE html>
 <html>
 <head>
     <link rel="stylesheet" href="../content/css/index.css"/>
+    <title>Listastic!</title>
 </head>
-<h1 id="heading" align="center"></h1>
+<body>
+<h1 id="heading" style="text-align:center"></h1>
 <div class="top-right-corner button" ng-show="user != null">
     <button type="button" style="font-size: 16px; border-radius:4px;" ng-click="logout()">Logout</button>
     <a style="font-size: 16px; border-radius:4px; color:white;" ng-href="#!add">Add Item</a>
@@ -63,7 +66,7 @@
     </div>
 
 </div>
-<div style="width:70%; margin: auto; color: white;" id="list share" ng-show="sharing">
+<div style="width:70%; margin: auto; color: white;" id="list-share" ng-show="sharing">
     <div class="column-half" ng-show="sharedUsers.length == 0" style="padding:5px;">
         Isn't shared with anyone.
     </div>
@@ -91,5 +94,5 @@
         <button type="button" ng-click="sharing = false">Cancel</button>
     </div>
 </div>
-
+</body>
 </html>
